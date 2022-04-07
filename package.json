@@ -29,5 +29,17 @@
     "eslint": "^8.4.1",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0"
-  }
+  },
+  "description": "## Build Setup",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusht87/front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusht87/front/issues"
+  },
+  "homepage": "https://github.com/jesusht87/front#readme"
 }
