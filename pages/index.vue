@@ -22,6 +22,7 @@ import HomeBottomRight from '../components/HomeBottomRight.vue'
 import HomeBottomCenter from '../components/HomeBottomCenter.vue'
 export default {
   name: 'IndexPage',
-  components: { HomeHeroImage, SearchHomeArea, HomeBottomLeft, HomeBottomRight, HomeBottomCenter }
+  components: { HomeHeroImage, SearchHomeArea, HomeBottomLeft, HomeBottomRight, HomeBottomCenter },
+  layout: 'default'
 }
 </script>
