@@ -8,7 +8,7 @@
 .HomeHeroImage {
   height: 350px;
   width: 100%;
-  background-image: url('../static/hero-image-bg.png');
+  background-image: url('../assets/images/hero-image-bg.png');
   background-size: cover;
   background-position: center;
 }
