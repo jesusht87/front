@@ -1,21 +1,31 @@
 <template>
-  <v-container fluid>
-    <v-row justify="center" align="center">
-      <v-col class="text-center pa-0">
+  <v-container fluid fill-height>
+    <v-divider />
+    <v-row id="todo-list">
+      <v-col cols="6">
         <ListTodos />
-        <FormCreateTask />
+      </v-col>
+      <v-spacer />
+      <v-col cols="4">
+        <UserDirectoryCard />
+      </v-col>
+    </v-row>
+    <v-row align="end">
+      <v-col cols="4">
+        <FormCreateTask @task-added="getTodos()" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import ListTodos from '../components/ListTodos.vue'
-import FormCreateTask from '../components/FormCreateTask.vue'
 
 export default {
   name: 'DashBoardPage',
-  components: { ListTodos, FormCreateTask },
   layout: 'default'
 }
 </script>
+
+<style scoped>
+
+</style>
