@@ -17,7 +17,7 @@
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     />
 
-    <v-card-title>{{ title }}</v-card-title>
+    <v-card-title>{{ house.title }}</v-card-title>
 
     <v-card-text>
       <v-row
@@ -26,10 +26,10 @@
       />
 
       <div class="my-4 text-subtitle-1">
-        {{ price }} • {{ municipality }}
+        {{ house.price }} • {{ house.municipality }}
       </div>
 
-      <div>{{ description }}</div>
+      <div>{{ house.description }}</div>
     </v-card-text>
 
     <v-divider class="mx-4" />
@@ -38,9 +38,9 @@
 
     <v-card-text>
       <ul>
-        <li>Habitaciones: {{ rooms }}.</li>
-        <li>Baños: {{ bathrooms }}.</li>
-        <li>Metros útiles: {{ meters }} m2.</li>
+        <li>Habitaciones: {{ house.rooms }}.</li>
+        <li>Baños: {{ house.bathrooms }}.</li>
+        <li>Metros útiles: {{ house.meters }} m2.</li>
       </ul>
     </v-card-text>
 
@@ -58,26 +58,18 @@
 
 <script>
 export default {
-  data: () => ({
-    loading: false,
-    characteristics: 1,
-    slug: 'property',
-    title: 'Casa Terrera en Arona',
-    price: 157000,
-    municipality: 'Arona',
-    description: 'Aquí la descripción',
-    rooms: 2,
-    bathrooms: 4,
-    meters: 150,
-    category: 'Casa Terrera'
+  name: 'PropertyCard',
+  props: {
+    house: {
+      type: Object,
+      default: () => ({
 
-  }),
-
+      })
+    }
+  },
   methods: {
-    reserve () {
-      this.loading = true
-
-      setTimeout(() => (this.loading = false), 2000)
+    visitar () {
+      console.log('Click para visitas')
     }
   }
 }

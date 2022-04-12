@@ -35,7 +35,17 @@
 
 <script>
 export default {
-  name: 'FooterCard'
+  name: 'FooterCard',
+  data () {
+    return {
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram'
+      ]
+    }
+  }
 }
 </script>
 
