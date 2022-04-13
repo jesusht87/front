@@ -1,6 +1,5 @@
 <template>
   <v-card
-    :loading="cargando"
     class="mx-auto my-12"
     max-width="374"
   >
@@ -14,7 +13,7 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      :src='house.photos'
     />
 
     <v-card-title>{{ house.title }}</v-card-title>
@@ -69,7 +68,7 @@ export default {
   },
   methods: {
     visitar () {
-      console.log('Click para visitas')
+      console.log(this.house.photos)
     }
   }
 }

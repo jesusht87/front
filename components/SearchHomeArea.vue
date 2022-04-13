@@ -24,6 +24,9 @@
       <v-btn elevation="2" color="primary">
         Buscar
       </v-btn>
+      <v-btn elevation="2" color="primary" to="search">
+        Ver todo
+      </v-btn>
       <v-spacer />
     </v-card-actions>
   </v-card>

@@ -1,14 +1,14 @@
 <template>
   <v-card>
-    <v-card-title>Input Task</v-card-title>
+    <v-card-title>Nueva Tarea</v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field v-model="task" label="Input Task" />
+        <v-text-field v-model="task" label="Escribe aquí tu tarea" @keypress.enter="addTask"/>
       </v-form>
     </v-card-text>
     <v-card-actions>
       <v-btn color="primary" @click="addTask">
-        Create
+        Crear
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'CreateTaskComponent',
+  name: 'TodoCreate',
   data () {
     return {
       task: ''
@@ -25,9 +25,11 @@ export default {
   methods: {
     async addTask () {
       try {
-        await this.$store.dispatch('createTodo', this.task)
-        this.task = ''
-        this.$store.dispatch('getTodos')
+        await this.$axios.post('/todo',
+          {
+            title: this.task
+          }).then(function () {
+        })
       } catch (err) {
       }
     }

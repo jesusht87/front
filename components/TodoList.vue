@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-form>
+    <!-- <v-form>
       <v-text-field v-model="searchInput" label="Search" />
-    </v-form>
+    </v-form> -->
     <v-card class="todo-list" height="55vh">
       <v-card-title>
         Task List
@@ -15,7 +15,7 @@
             multiple
             active-class=""
           >
-            <v-list-item v-for="(todo, idx) in filteredTodos" :key="idx">
+            <v-list-item v-for="(todo, idx) in todos" :key="idx" :todo="todo">
               <v-list-item-action>
                 <v-checkbox />
               </v-list-item-action>
@@ -41,20 +41,21 @@
 
 <script>
 export default {
-  name: 'ListComponent',
+  name: 'TodoList',
   data () {
     return {
-      searchInput: ''
+      todos: ''
     }
-  },
-  async fetch () {
-    await this.$store.dispatch('getTodos')
   },
   computed: {
-    filteredTodos () {
-      if (this.searchInput === '') { return this.$store.state.todos }
-      return this.$store.state.todos.filter(todo => todo.title.includes(this.searchInput))
-    }
+    // filteredTodos () {
+    //   if (this.searchInput === '') { return this.$axios.todos }
+    //   return this.$axios.todos.filter(todo => todo.title.includes(this.searchInput))
+    // }
+  },
+  async mounted () {
+    const response = await this.$axios.get('/todo')
+    this.todos = response.data
   }
 }
 </script>
