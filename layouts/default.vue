@@ -20,13 +20,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'RealEstateApp',
-      icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram'
-      ]
+      title: 'RealEstateApp'
     }
   }
 }
