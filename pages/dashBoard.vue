@@ -1,12 +1,12 @@
 <template>
   <v-container fluid fill-height>
-    <v-divider />
+    <v-spacer />
     <v-row id="todo-list">
       <v-col cols="6">
         <ListTodos />
       </v-col>
       <v-spacer />
-      <v-col cols="4">
+      <v-col margin-top: 5 cols="5">
         <UserDirectoryCard />
       </v-col>
     </v-row>
