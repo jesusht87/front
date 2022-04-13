@@ -1,7 +1,8 @@
 <template>
   <v-card
     class="mx-auto my-12"
-    max-width="374"
+    max-width="380"
+    height="660"
   >
     <template slot="progress">
       <v-progress-linear
@@ -13,7 +14,7 @@
 
     <v-img
       height="250"
-      :src='house.photos'
+      :src="house.photos"
     />
 
     <v-card-title>{{ house.title }}</v-card-title>
@@ -25,7 +26,7 @@
       />
 
       <div class="my-4 text-subtitle-1">
-        {{ house.price }} • {{ house.municipality }}
+        {{ house.price }} • {{ house.municipality.name }}
       </div>
 
       <div>{{ house.description }}</div>

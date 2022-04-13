@@ -6,7 +6,7 @@
     <v-img
       class="white--text align-end"
       height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      :src="require('@/assets/images/new-homes.jpg')"
     >
       <v-card-title>Novedades</v-card-title>
     </v-img>
@@ -16,14 +16,14 @@
     </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>Echa un vistazo y descubre nuestras últimas propiedades, las más nuevas en nuestro catálogo.</div>
+      <div>Lo último en nuestro catálogo.</div>
     </v-card-text>
 
     <v-card-actions>
       <v-btn
         color="orange"
         text
-        to="contact"
+        to="promo"
       >
         Ver
       </v-btn>

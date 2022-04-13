@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <div class="searchResultsTitle">
-          <h1>Todas las propiedades</h1>
+          <h1>Propiedades en promoción... ¡aprovecha la oportunidad!</h1>
         </div>
       </v-col>
     </v-row>
@@ -25,7 +25,7 @@
 <script>
 import PropertyCard from '../components/PropertyCard.vue'
 export default {
-  name: 'SearchPage',
+  name: 'PromoPage',
   components: {
     PropertyCard
   },
@@ -35,7 +35,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await this.$axios.get('/property')
+    const response = await this.$axios.get('/property/promo/')
     this.houses = response.data
   }
 }
@@ -46,7 +46,7 @@ export default {
   padding: 25px;
   line-height: 125px;
   text-align: center;
-  background-image: url('@/assets/images/search-results-header.jpg');
+  background-image: url('@/assets/images/promo-results-header.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

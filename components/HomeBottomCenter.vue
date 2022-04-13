@@ -6,7 +6,7 @@
     <v-img
       class="white--text align-end"
       height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      :src="require('@/assets/images/promo-homes.png')"
     >
       <v-card-title>En Promoción</v-card-title>
     </v-img>
@@ -23,7 +23,7 @@
       <v-btn
         color="orange"
         text
-        to="contact"
+        to="promo"
       >
         Ver
       </v-btn>

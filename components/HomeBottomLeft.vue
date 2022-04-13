@@ -16,7 +16,7 @@
     </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>Si no encuentras en la búsqueda lo que necesitas, te podemos ayudar. Contacta con nosotros, y te ayudaremos a encontrar tu futuro hogar con las características que nos pidas.</div>
+      <div>Si no encuentras lo que buscas, cóntáctanos y te ayudamos.</div>
     </v-card-text>
 
     <v-card-actions>

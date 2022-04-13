@@ -7,9 +7,15 @@
       </v-col>
     </v-row>
     <v-row align="center">
-      <HomeBottomLeft />
-      <HomeBottomCenter />
-      <HomeBottomRight />
+      <v-col class="homeBottomCards">
+        <HomeBottomLeft />
+      </v-col>
+      <v-col class="homeBottomCards">
+        <HomeBottomCenter />
+      </v-col>
+      <v-col class="homeBottomCards">
+        <HomeBottomRight />
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -26,3 +32,9 @@ export default {
   layout: 'default'
 }
 </script>
+
+<style scoped>
+.homeBottomCards {
+  height: auto;
+}
+</style>
