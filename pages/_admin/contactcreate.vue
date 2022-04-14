@@ -13,7 +13,7 @@
           <v-text-field
             v-model="name"
             :error-messages="nameErrors"
-            :counter="3"
+            :counter="10"
             label="Nombre"
             required
             @input="$v.name.$touch()"
@@ -134,6 +134,7 @@ export default {
             phone: this.phone,
             notes: this.notes
           }).then(confirm('Contacto creado con éxito'))
+        this.clear()
       } catch (err) {
       }
     },

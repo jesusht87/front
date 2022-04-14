@@ -7,13 +7,13 @@
         </div>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row align="center" justify="center">
       <v-col>
+        <h3>Contactos</h3>
         <v-card class="contact-list">
           <v-card-text>
             <v-list>
               <v-list-item-group
-                multiple
                 active-class=""
               >
                 <v-list-item v-for="(contact, idx) in contacts" :key="idx" :todo="contact">
@@ -26,8 +26,9 @@
                       class="mx-2"
                       fab
                       dark
-                      small
+                      x-small
                       color="blue"
+                      @click="editContact(contact._id)"
                     >
                       <v-icon>
                         mdi-pencil
@@ -37,17 +38,16 @@
 
                   <v-list-item-action>
                     <v-btn
-                      class="mx-2"
+                      class="mx-2 delete-btn"
                       fab
                       dark
-                      small
+                      x-small
                       color="red"
                       @click="deleteContact(contact._id)"
                     >
-                      <v-icon>
-                        X
-                      </v-icon>
+                      X
                     </v-btn>
+                    <confirm-dialogue ref="ConfirmDialogue"></confirm-dialogue>
                   </v-list-item-action>
                 </v-list-item>
               </v-list-item-group>
@@ -55,17 +55,71 @@
           </v-card-text>
         </v-card>
       </v-col>
+      <v-col v-if="edition" cols="6" mb-10>
+        <h3>Editando {{ contactEdited.name }} {{ contactEdited.surname }}</h3>
+        <form>
+          <v-text-field
+            v-model="contactEdited.name"
+            :counter="3"
+            label="Nombre"
+          />
+          <v-text-field
+            v-model="contactEdited.surname"
+            :counter="10"
+            label="Apellidos"
+          />
+          <v-text-field
+            v-model="contactEdited.email"
+            label="E-mail"
+          />
+          <v-text-field
+            v-model="contactEdited.phone"
+            :counter="10"
+            label="Teléfono"
+          />
+
+          <v-text-field
+            v-model="contactEdited.notes"
+            :counter="10"
+            label="Notas"
+          />
+          <v-btn
+            class="mr-4"
+            red
+            @click="edition = false"
+          >
+            Cancelar
+          </v-btn>
+          <v-btn
+            class="mr-4"
+            @click="submit"
+          >
+            Registrar
+          </v-btn>
+        </form>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import ConfirmDialogue from '../../components/ConfirmDialogue.vue'
+
 export default {
   name: 'ContactEditPage',
+  components: { ConfirmDialogue },
   layout: 'dashlayout',
   data () {
     return {
-      contacts: ''
+      contacts: '',
+      contactEdited: {
+        name: '',
+        surname: '',
+        email: '',
+        phone: '',
+        notes: ''
+      },
+      edition: false
     }
   },
   async mounted () {
@@ -80,7 +134,50 @@ export default {
         this.contacts = response.data
       } catch (err) {
       }
+    },
+    async editContact (ContactId) {
+      try {
+        if (this.edition === true) {
+          const response = await this.$axios.get('/contact/' + ContactId)
+          this.contactEdited = response.data[0]
+        } else {
+          this.edition = true
+          const response = await this.$axios.get('/contact/' + ContactId)
+          this.contactEdited = response.data[0]
+        }
+      } catch (err) {
+      }
+    },
+    async submit () {
+      try {
+        await this.$axios.put('/contact/' + this.contactEdited._id,
+          {
+            name: this.contactEdited.name,
+            surname: this.contactEdited.surname,
+            email: this.contactEdited.email,
+            phone: this.contactEdited.phone,
+            notes: this.contactEdited.notes
+          }).then(confirm('Contacto modificado con éxito'))
+        const response = await this.$axios.get('/contact')
+        this.contacts = response.data
+      } catch (err) {
+      }
+    },
+    async doDelete (ContactId) {
+      const ok = await this.$refs.confirmDialogue.show({
+        title: 'Delete Page',
+        message: 'Are you sure you want to delete this page? It cannot be undone.',
+        okButton: 'Delete Forever'
+      })
+      // If you throw an error, the method will terminate here unless you surround it wil try/catch
+      if (ok) {
+        this.deleteContact(ContactId)
+        alert('You have successfully delete this page.')
+      } else {
+        alert('You chose not to delete this page. Doing nothing now.')
+      }
     }
+
   }
 }
 </script>
@@ -96,5 +193,16 @@ export default {
   background-size: cover;
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
   color: white;
+}
+.delete-btn {
+    padding: 0.5em 1em;
+    background-color: #eccfc9;
+    color: #c5391a;
+    border: 2px solid #ea3f1b;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 </style>
