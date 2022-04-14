@@ -3,7 +3,7 @@
     <v-card-title>Nueva Tarea</v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field v-model="task" label="Escribe aquí tu tarea" @keypress.enter="addTask"/>
+        <v-text-field v-model="task" label="Escribe aquí tu tarea" @keypress.enter="addTask" />
       </v-form>
     </v-card-text>
     <v-card-actions>

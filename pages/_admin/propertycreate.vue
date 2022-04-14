@@ -1,9 +1,9 @@
 <template>
-  <p />
+  <p>Hello</p>
 </template>
 
 <script>
 export default {
-  name: 'CategoryIndexPage'
+  name: 'PropertyCreatePage'
 }
 </script>

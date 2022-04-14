@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <p>{{ $route.params.slug }}</p>
-  </div>
+  <p />
 </template>
 
 <script>
 export default {
-
+  name: 'ContactEditPage',
+  layout: 'dashlayout'
 }
 </script>

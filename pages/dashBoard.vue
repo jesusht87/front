@@ -16,7 +16,7 @@ export default {
   components: {
     TodoWrapper
   },
-  layout: 'default'
+  layout: 'dashlayout'
 }
 </script>
 

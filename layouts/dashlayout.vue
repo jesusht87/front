@@ -1,20 +1,18 @@
 <template>
   <v-app>
-    <NavBar />
+    <NavBarDashboard />
     <v-main>
       <Nuxt />
     </v-main>
-    <Footer />
   </v-app>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
-import Footer from '@/components/FooterCard.vue'
+import NavBarDashboard from '../components/NavBarDashboard.vue'
 
 export default {
-  name: 'DefaultLayout',
-  components: { NavBar, Footer },
+  name: 'DashLayout',
+  components: { NavBarDashboard },
   data () {
     return {
       miniVariant: false,

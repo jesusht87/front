@@ -69,7 +69,6 @@ export default {
   },
   methods: {
     visitar () {
-      console.log(this.house.photos)
     }
   }
 }
