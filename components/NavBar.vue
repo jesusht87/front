@@ -25,13 +25,13 @@
       to="contact"
       text
     >
-      Contacto
+      Mi Cuenta
     </v-btn>
     <v-btn
-      to="account"
+      to="loginPage"
       text
     >
-      Mi Cuenta
+      Login
     </v-btn>
   </v-toolbar>
 </template>
