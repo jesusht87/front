@@ -1,17 +1,17 @@
 <template>
   <v-row>
     <v-col>
-      <PropertyManager />
+      <PropertyList />
     </v-col>
   </v-row>
 </template>
 
 <script>
-import PropertyManager from '../../components/PropertyManager.vue'
+import PropertyList from '../../components/PropertyList.vue'
 export default {
-  name: 'PropertyEdit',
+  name: 'PropertyListPage',
   components: {
-    PropertyManager
+    PropertyList
   },
   layout: 'dashboardlayout'
 }
