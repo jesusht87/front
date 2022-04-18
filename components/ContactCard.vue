@@ -12,7 +12,7 @@
       <v-btn
         color="deep-purple lighten-2"
         text
-        to="contactedit"
+        to="/admin/contactedit"
       >
         Editar
       </v-btn>

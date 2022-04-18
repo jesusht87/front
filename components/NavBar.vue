@@ -22,12 +22,6 @@
       Sobre Nosotros
     </v-btn>
     <v-btn
-      to="contact"
-      text
-    >
-      Contacto
-    </v-btn>
-    <v-btn
       to="account"
       text
     >

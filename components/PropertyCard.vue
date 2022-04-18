@@ -48,7 +48,7 @@
       <v-btn
         color="deep-purple lighten-2"
         text
-        @click="visitar"
+        @click="visitar()"
       >
         Solicitar Visita
       </v-btn>
@@ -69,6 +69,7 @@ export default {
   },
   methods: {
     visitar () {
+      window.location.href = '/petition/?petitionId=' + this.house._id
     }
   }
 }
