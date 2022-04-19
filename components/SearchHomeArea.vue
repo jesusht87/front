@@ -26,11 +26,7 @@
                 solo
                 item-text="text"
                 item-value="value"
-                :options="[
-                  'Vivienda',
-                  'Local Comercial',
-                  'Nave Industrial',
-                ]"
+                :items="optionstwo"
               />
             </v-col>
           </v-row>
@@ -88,6 +84,11 @@ export default {
         'Tacoronte',
         'Tegueste',
         'Vilaflor'
+      ],
+      optionstwo: [
+        'Vivienda',
+        'Local Comercial',
+        'Nave Industrial'
       ]
     }
   },
