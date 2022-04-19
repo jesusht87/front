@@ -16,39 +16,7 @@
                 solo
                 item-text="text"
                 item-value="value"
-                :options="[
-                  'Adeje',
-                  'Arafo',
-                  'Arico',
-                  'Arona',
-                  'Buenavista del Norte',
-                  'Candelaria',
-                  'El Rosario',
-                  'El Sauzal',
-                  'El Tanque',
-                  'Fasnia',
-                  'Garachico',
-                  'Granadilla de Abona',
-                  'Güímar',
-                  'Guía de Isora',
-                  'Icod de los Vinos',
-                  'La Guancha',
-                  'La Matanza de Acentejo',
-                  'La Orotava',
-                  'La Victoria de Acentejo',
-                  'Los Realejos',
-                  'Los Silos',
-                  'Puerto de la Cruz',
-                  'San Cristóbal De La Laguna',
-                  'San Juan de la Rambla',
-                  'San Miguel de Abona',
-                  'Santa Cruz de Tenerife',
-                  'Santa Úrsula',
-                  'Santiago del Teide',
-                  'Tacoronte',
-                  'Tegueste',
-                  'Vilaflor',
-                ]"
+                :options="options"
               />
             </v-col>
             <v-col cols="12" md="6">
@@ -87,7 +55,40 @@ export default {
   data () {
     return {
       municipality: '',
-      category: ''
+      category: '',
+      options: [
+        'Adeje',
+        'Arafo',
+        'Arico',
+        'Arona',
+        'Buenavista del Norte',
+        'Candelaria',
+        'El Rosario',
+        'El Sauzal',
+        'El Tanque',
+        'Fasnia',
+        'Garachico',
+        'Granadilla de Abona',
+        'Güímar',
+        'Guía de Isora',
+        'Icod de los Vinos',
+        'La Guancha',
+        'La Matanza de Acentejo',
+        'La Orotava',
+        'La Victoria de Acentejo',
+        'Los Realejos',
+        'Los Silos',
+        'Puerto de la Cruz',
+        'San Cristóbal De La Laguna',
+        'San Juan de la Rambla',
+        'San Miguel de Abona',
+        'Santa Cruz de Tenerife',
+        'Santa Úrsula',
+        'Santiago del Teide',
+        'Tacoronte',
+        'Tegueste',
+        'Vilaflor'
+      ]
     }
   },
   methods: {
