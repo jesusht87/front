@@ -26,7 +26,7 @@
       />
 
       <div class="my-4 text-subtitle-1">
-        {{ house.price }} • {{ house.municipality.name }}
+        {{ house.price }} • {{ house.municipality }}
       </div>
 
       <div>{{ house.description }}</div>

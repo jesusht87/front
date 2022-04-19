@@ -21,14 +21,9 @@
     >
       Sobre Nosotros
     </v-btn>
+
     <v-btn
-      to="contact"
-      text
-    >
-      Mi Cuenta
-    </v-btn>
-    <v-btn
-      to="loginPage"
+      to="login"
       text
     >
       Login

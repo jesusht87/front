@@ -14,8 +14,11 @@
     </v-row>
     <v-row>
       <v-col>
-        <div class="underSearch">
-          <HomeBottomLeft />
+        <div class="typerowright">
+          <div class="displayleft">
+            <h1>A La Carta</h1>
+            <p>En ocasiones, el hogar de tus sueños no aparece en una búsqueda... ¿te ayudamos a conseguirlo? Contacta con nosotros si no encuentras lo que buscas, y te ayudaremos a lograrlo.</p>
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -35,7 +38,16 @@ export default {
     }
   },
   async mounted () {
-    const response = await this.$axios.get('/property')
+    let response
+    if (!this.$route.query.municipality) {
+      response = await this.$axios.get('/property')
+    } else {
+      response = await this.$axios.get('/property/municipality', {
+        params: {
+          municipality: this.$route.query.municipality
+        }
+      })
+    }
     this.houses = response.data
   }
 }
@@ -46,11 +58,11 @@ export default {
   padding: 25px;
   line-height: 125px;
   text-align: center;
-  background-image: url('@/assets/images/promo-results-header.jpg');
+  background-image: url("@/assets/images/promo-results-header.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
   color: white;
 }
 .searchResults {
@@ -59,10 +71,31 @@ export default {
 .underSearch {
   padding: 15px;
   margin-bottom: 20px;
-  background-image: url('@/assets/images/hero-image-bg.png');
+  background-image: url("@/assets/images/hero-image-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
+.typerowright {
+  background-image: url('@/assets/images/search-results-header.jpg');
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  width: 100%;
+  padding: 10%;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+.displayleft{
+  color: white;
+  text-align: left;
+  width: 50%;
+  background-color: rgba(192, 104, 0, 0.60);
+  padding: 15px;
+  border-radius: 5px;
+
 }
 </style>

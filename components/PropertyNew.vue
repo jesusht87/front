@@ -10,6 +10,45 @@
     <v-row align="center" justify="center">
       <v-col cols="6" mb-10>
         <form>
+          <v-select
+            v-model="municipality"
+            outlined
+            multiple
+            :options="[
+              'Adeje',
+              'Arafo',
+              'Arico',
+              'Arona',
+              'Buenavista del Norte',
+              'Candelaria',
+              'El Rosario',
+              'El Sauzal',
+              'El Tanque',
+              'Fasnia',
+              'Garachico',
+              'Granadilla de Abona',
+              'Güímar',
+              'Guía de Isora',
+              'Icod de los Vinos',
+              'La Guancha',
+              'La Matanza de Acentejo',
+              'La Orotava',
+              'La Victoria de Acentejo',
+              'Los Realejos',
+              'Los Silos',
+              'Puerto de la Cruz',
+              'San Cristóbal de la Laguna',
+              'San Juan de la Rambla',
+              'San Miguel de Abona',
+              'Santa Cruz de Tenerife',
+              'Santa Úrsula',
+              'Santiago del Teide',
+              'Tacoronte',
+              'Tegueste',
+              'Vilaflor',
+            ]"
+          />
+
           <v-text-field
             v-model="title"
             label="Título"
@@ -24,6 +63,7 @@
             v-model="address"
             label="Dirección"
           />
+
           <v-text-field
             v-model="description"
             label="Descripción"
@@ -73,6 +113,7 @@ export default {
     title: '',
     price: '',
     address: '',
+    municipality: '',
     description: '',
     meters: '',
     bathrooms: '',
@@ -87,6 +128,7 @@ export default {
             title: this.title,
             price: this.price,
             address: this.address,
+            municipality: this.municipality,
             description: this.description,
             meters: this.meters,
             bathrooms: this.bathrooms,
@@ -101,6 +143,7 @@ export default {
       this.title = ''
       this.price = ''
       this.address = ''
+      this.municipality = ''
       this.description = ''
       this.meters = ''
       this.bathrooms = ''

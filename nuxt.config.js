@@ -14,18 +14,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,6 +38,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     'nuxt-vue-select'
   ],
 
@@ -49,6 +46,39 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: process.env.API_URL
+  },
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/admindashboard'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          type: '',
+          name: 'token'
+        },
+        user: {
+          property: '',
+          autoFetch: true
+        },
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            property: 'token'
+          },
+          user: {
+            url: '/auth/me',
+            method: 'get'
+          }
+        }
+      }
+    }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -70,6 +100,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }

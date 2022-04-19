@@ -56,13 +56,8 @@
                 multiple
                 :options="[
                   'Vivienda',
-                  'Obra Nueva',
                   'Local Comercial',
-                  'Garaje',
-                  'Oficina',
-                  'Trasfero',
-                  'Terreno',
-                  'Edificio',
+                  'Nave Industrial',
                 ]"
               />
             </v-col>
@@ -93,7 +88,7 @@ export default {
   },
   methods: {
     submit () {
-      window.location.href = '/results/?municipality=' + this.municipality
+      this.$router.push('/results?municipality=' + this.municipality)
     }
   }
 }

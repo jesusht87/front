@@ -35,7 +35,6 @@ export default {
     }
   },
   async mounted () {
-    console.log(this.$route.query.petitionId)
     const response = await this.$axios.get('/property/' + this.$route.query.petitionId)
     this.title = response.data[0].title
   }

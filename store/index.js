@@ -17,4 +17,10 @@ export const actions = {
   async createTodo (state, todo) {
     await this.$axios.post('/todos', { title: todo })
   }
+
+  // async login (state, { email, password }) {
+  // console.log(email, password)
+  // const { data } = await this.$auth.loginWith('local', { data: { email, password } })
+  // return data
+  // }
 }

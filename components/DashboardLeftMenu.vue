@@ -1,13 +1,6 @@
 <template>
-  <v-card
-    width="256"
-    tile
-  >
-    <v-navigation-drawer
-      class="blue accent-4"
-      dark
-      permanent
-    >
+  <v-card width="256" tile>
+    <v-navigation-drawer class="blue accent-4" dark permanent>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -48,7 +41,7 @@
 
       <template #append>
         <div class="pa-2">
-          <v-btn block>
+          <v-btn block @click="logout()">
             Logout
           </v-btn>
         </div>
@@ -59,10 +52,13 @@
 
 <script>
 export default {
-  name: 'DashboardLeftMenu'
+  name: 'DashboardLeftMenu',
+  methods: {
+    logout () {
+      this.$auth.logout()
+    }
+  }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
