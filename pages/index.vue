@@ -11,7 +11,7 @@
         <div class="typerowright">
           <div class="displayleft">
             <h1>¡En Promoción!</h1>
-            <p>Descubre la selección de propiedades que se encuentran en promoción, y hazte con el hogar de tus sueños por menos de lo que esperabas. ¡Descúbrelas ahora!</p>
+            <p>Descubre la selección de propiedades que se encuentran en promoción, y hazte con el hogar de tus sueños por menos de lo que esperabas. ¡Descúbrelas ahora!  </p>
             <v-btn
               to="promo"
             >
