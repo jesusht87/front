@@ -37,7 +37,7 @@
                   'Los Realejos',
                   'Los Silos',
                   'Puerto de la Cruz',
-                  'San Cristóbal de la Laguna',
+                  'San Cristóbal De La Laguna',
                   'San Juan de la Rambla',
                   'San Miguel de Abona',
                   'Santa Cruz de Tenerife',
