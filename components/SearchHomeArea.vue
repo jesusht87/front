@@ -13,7 +13,9 @@
               <v-select
                 v-model="municipality"
                 outlined
-                multiple
+                solo
+                item-text="text"
+                item-value="value"
                 :options="[
                   'Adeje',
                   'Arafo',
@@ -53,7 +55,9 @@
               <v-select
                 v-model="category"
                 outlined
-                multiple
+                solo
+                item-text="text"
+                item-value="value"
                 :options="[
                   'Vivienda',
                   'Local Comercial',
