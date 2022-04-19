@@ -16,7 +16,7 @@
                 solo
                 item-text="text"
                 item-value="value"
-                :options="options"
+                :items="options"
               />
             </v-col>
             <v-col cols="12" md="6">
