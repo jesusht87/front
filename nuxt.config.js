@@ -38,13 +38,35 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/firebase'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: process.env.API_URL
+  },
+
+  // Firebase module configuration: https://firebase.nuxtjs.org/guide/getting-started
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDxiqn0UBm1T06Hws3TGEkv6TcVsWeRj-U',
+      authDomain: 'seaviewproperties-51a9d.firebaseapp.com',
+      databaseURL: 'https://seaviewproperties-51a9d-default-rtdb.europe-west1.firebasedatabase.app',
+      projectId: 'seaviewproperties-51a9d',
+      storageBucket: 'seaviewproperties-51a9d.appspot.com',
+      messagingSenderId: '28587734568',
+      appId: '1:28587734568:web:fb9851bd3150fd22cf271d',
+      measurementId: 'G-89DVH0SYD3'
+    },
+    services: {
+      storage: true
+    }
+  },
+
+  env: {
+    FIRE_ENV: process.env.FIRE_ENV
   },
 
   auth: {
